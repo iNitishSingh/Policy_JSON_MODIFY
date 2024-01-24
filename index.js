@@ -43,7 +43,7 @@ clausesMaster=[];
 // console.log(count)
 
 
-for(let i=1;i<2;i++){
+for(let i=1;i<Number(config.proposal.data.worker_detail_count);i++){
 
     // let k;
     // for(j=0;j<count;j++){
@@ -60,29 +60,27 @@ for(let i=1;i<2;i++){
         typeOfWorkers:config.proposal.data[`work_catg_${i}`],
         totalWages:config.proposal.data[`total_wages_${i}`],
         ecRate:config.proposal.data[`worker_rate_${i}`],
-        grouping:config.quote.data.trade_category_tmpl
+        grouping:config.proposal.data[`work_trade_catg_group_${i}`]
     })
 
 }
 
+console.log(config.quote.data.trade_category_details[0].length_increase)
+
+
 let premiumDetails=[]
 
-for(let i=1;i<2;i++){
+for(let i=0;i<config.quote.data[`trade_category_details`].length;i++){
     premiumDetails.push(
         {
-            trade_category_code:config.quote.data[`work_trade_catg_${i}`].slice(0,4),
-            trade_category_name:config.quote.data[`work_trade_catg_${i}`],
-            statutory_prem:config.proposal.data[`statutory_prem_${i}`],
-            od_prem:config.proposal.data[`od_prem_${i}`],
-            medex_prem:config.proposal.data[`medex_prem_${i}`]
+            trade_category_code:config.quote.data.trade_category_details[i].length_increase.slice(0,4),
+            trade_category_name:config.quote.data.trade_category_details[i].length_increase,
+            statutory_prem:config.proposal.data[`statutory_prem_${i+1}`],
+            od_prem:config.proposal.data[`od_prem_${i+1}`],
+            medex_prem:config.proposal.data[`medex_prem_${i+1}`]
         }
     )
 }
-
-console.log(config.proposal.data[`clause_${1}`]);
-console.log(range[2].CLAUSE_DESCRIPTION);
-console.log(config.proposal.data[`clause_${1}`]==range[2].CLAUSE_DESCRIPTION)
-
 for(let i=1;i<15;i++){
     if(config.proposal.data[`clause_${i}_appl`]=="yes"){
         let k;
@@ -100,12 +98,16 @@ for(let i=1;i<15;i++){
     })
 }
 }
+
+// console.log(employeeDetails)
+ console.log(premiumDetails)
+// console.log(clausesMaster)
 //const nks =JSON.parse(JSON.stringify(config));
 config.proposal.data['employeeDetails']= employeeDetails;
 config.proposal.data['premiumDetails']=premiumDetails;
 config.proposal.data['clausesMaster']=clausesMaster
 
-console.log(config.proposal.data.clausesMaster)
+//console.log(config.proposal.data.clausesMaster)
 fs.writeFile('policy.json',JSON.stringify(config),(error)=>{
     if(error){
         console.log(error)
