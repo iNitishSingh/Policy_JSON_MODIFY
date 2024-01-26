@@ -1,0 +1,848 @@
+{
+    "status": 0,
+    "txt": "",
+    "data": {
+        "policy_no": "2250019302",
+        "channel": "Broker",
+        "category": "Accept",
+        "total_Statutory_premium": 1963.91173,
+        "medex_premium": 0,
+        "od_premium": 490.98,
+        "net_premium": 5505.78,
+        "sgst": 220.94027999999997,
+        "cgst": 220.94027999999997,
+        "igst": 0,
+        "gst": 441.881,
+        "total_premium": 2898,
+        "referral_reason": "",
+        "decline_reason": "",
+        "claim_loading_percentage": "",
+        "claim_ratio": 0,
+        "pup_nonpup": "PUP",
+        "total_wages": "",
+        "business_type": "New Business",
+        "gc_product_code": 1409,
+        "product_name": "Employees Compensation",
+        "cl_zone": "Bangalore",
+        "location_type": "All over India",
+        "location_count": "",
+        "Policy_term": "",
+        "medex_location": "",
+        "medex_loading": 0,
+        "od_loading": 0.25,
+        "revised_expiry_premium_post_claims_loading": "",
+        "worker_details": [
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "1",
+                "name_of_worker": "",
+                "worker_category": "ADMIN EXECUTIVE",
+                "monthly_wages": "15000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "2",
+                "name_of_worker": "",
+                "worker_category": "EXECUTIVE",
+                "monthly_wages": "20000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1232-Engineers not otherwise classified -Incl. work away from shop or yard upto 9 mtrs height",
+                "trade_category_code": 1232,
+                "trade_category_group": "",
+                "no_of_workers": "3",
+                "name_of_worker": "",
+                "worker_category": "Rigors",
+                "monthly_wages": "16500",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "27.25"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "1",
+                "name_of_worker": "",
+                "worker_category": "OPERATIONEXECUTIVE",
+                "monthly_wages": "16000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "1",
+                "name_of_worker": "",
+                "worker_category": "OPERATIONEXECUTIVE",
+                "monthly_wages": "16000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "2",
+                "name_of_worker": "",
+                "worker_category": "GENERAL MANAGER",
+                "monthly_wages": "60000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "7",
+                "name_of_worker": "",
+                "worker_category": "MANAGER",
+                "monthly_wages": "25000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "2",
+                "name_of_worker": "",
+                "worker_category": "DIRECTOR",
+                "monthly_wages": "50000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "2",
+                "name_of_worker": "",
+                "worker_category": "EXECUTIVE",
+                "monthly_wages": "20000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "2",
+                "name_of_worker": "",
+                "worker_category": "DIRECTOR",
+                "monthly_wages": "50000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "7",
+                "name_of_worker": "",
+                "worker_category": "MANAGER",
+                "monthly_wages": "25000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1071-Builders -All employees engaged in shop or yard or in construction/ demolition of buildings and other civil construction like dams, bridges etc. incl. excavation-Excl. blasting and tunneling",
+                "trade_category_code": 1071,
+                "trade_category_group": "",
+                "no_of_workers": "25",
+                "name_of_worker": "",
+                "worker_category": "As Mentioned In Condition",
+                "monthly_wages": "15000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "30"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "1",
+                "name_of_worker": "",
+                "worker_category": "DIRECTOR",
+                "monthly_wages": "100000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "2",
+                "name_of_worker": "",
+                "worker_category": "GENERAL MANAGER",
+                "monthly_wages": "60000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "1",
+                "name_of_worker": "",
+                "worker_category": "UNIT MANAGER",
+                "monthly_wages": "22000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1232-Engineers not otherwise classified -Incl. work away from shop or yard upto 9 mtrs height",
+                "trade_category_code": 1232,
+                "trade_category_group": "",
+                "no_of_workers": "3",
+                "name_of_worker": "",
+                "worker_category": "Rigors",
+                "monthly_wages": "16500",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "27.25"
+            },
+            {
+                "trade_category_name": "1232-Engineers not otherwise classified -Incl. work away from shop or yard upto 9 mtrs height",
+                "trade_category_code": 1232,
+                "trade_category_group": "",
+                "no_of_workers": "2",
+                "name_of_worker": "",
+                "worker_category": "Fitters",
+                "monthly_wages": "18000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "27.25"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "1",
+                "name_of_worker": "",
+                "worker_category": "ADMIN EXECUTIVE",
+                "monthly_wages": "15000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "1",
+                "name_of_worker": "",
+                "worker_category": "DIRECTOR",
+                "monthly_wages": "100000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "1",
+                "name_of_worker": "",
+                "worker_category": "UNIT MANAGER",
+                "monthly_wages": "22000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "1",
+                "name_of_worker": "",
+                "worker_category": "CHIEF EXECUTIVEOFFICER",
+                "monthly_wages": "135000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1071-Builders -All employees engaged in shop or yard or in construction/ demolition of buildings and other civil construction like dams, bridges etc. incl. excavation-Excl. blasting and tunneling",
+                "trade_category_code": 1071,
+                "trade_category_group": "",
+                "no_of_workers": "25",
+                "name_of_worker": "",
+                "worker_category": "As Mentioned In Condition",
+                "monthly_wages": "15000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "30"
+            },
+            {
+                "trade_category_name": "1118-Clerical Staff-Engaged in trade on mercantile employment (Duties strictly limited to indoor clerical work)",
+                "trade_category_code": 1118,
+                "trade_category_group": "",
+                "no_of_workers": "1",
+                "name_of_worker": "",
+                "worker_category": "CHIEF EXECUTIVEOFFICER",
+                "monthly_wages": "135000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "2.45"
+            },
+            {
+                "trade_category_name": "1232-Engineers not otherwise classified -Incl. work away from shop or yard upto 9 mtrs height",
+                "trade_category_code": 1232,
+                "trade_category_group": "",
+                "no_of_workers": "2",
+                "name_of_worker": "",
+                "worker_category": "Fitters",
+                "monthly_wages": "18000",
+                "total_wages": "",
+                "total_premium": 2898,
+                "rate": "27.25"
+            }
+        ],
+        "premium_detail": [
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "Office Staff",
+                "trade_catgeory_code": "1826",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "Builders -All employees engaged in shop or yard or in construction/ demolition of buildings and other civil construction like dams, bridges etc. incl. excavation-Excl. blasting and tunneling",
+                "trade_catgeory_code": "1071",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "Engineering Workshops",
+                "trade_catgeory_code": "1819",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "Builders -All employees engaged in shop or yard or in construction/ demolition of buildings and other civil construction like dams, bridges etc. incl. excavation-Excl. blasting and tunneling",
+                "trade_catgeory_code": "1071",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "Engineering Workshops",
+                "trade_catgeory_code": "1819",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "Builders -All employees engaged in shop or yard or in construction/ demolition of buildings and other civil construction like dams, bridges etc. incl. excavation-Excl. blasting and tunneling",
+                "trade_catgeory_code": "1071",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "Office Staff",
+                "trade_catgeory_code": "1826",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "Office Staff",
+                "trade_catgeory_code": "1826",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "Engineering Workshops",
+                "trade_catgeory_code": "1819",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "Builders -All employees engaged in shop or yard or in construction/ demolition of buildings and other civil construction like dams, bridges etc. incl. excavation-Excl. blasting and tunneling",
+                "trade_catgeory_code": "1071",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            },
+            {
+                "trade_category_name": "",
+                "trade_catgeory_code": "",
+                "total_premium": 2898,
+                "statutory_premium": 1963.91173,
+                "medex_premium": 0,
+                "od_premium": 490.98
+            }
+        ],
+        "location_1": "Ahmedabad",
+        "uw_cont_1": "1",
+        "location_2": "Bangalore-Delhi-Mumbai",
+        "uw_cont_2": "1",
+        "location_3": "Others",
+        "uw_cont_3": "1",
+        "total_no_of_workers": 96,
+        "nstp_reason": "",
+        "worker_total_wages": 5505.78,
+        "dummy_3": "",
+        "dummy_4": "",
+        "dummy_5": "",
+        "dummy_6": "",
+        "dummy_7": "",
+        "dummy_8": "",
+        "dummy_9": "",
+        "dummy_10": ""
+    }
+}
