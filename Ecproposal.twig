@@ -1,0 +1,385 @@
+{
+	"source": "TATA-AIG",
+	"medium": "PACE_UAT",
+	"campaign": "PACE_UAT",
+	"authenticationToken": "",
+	"objAIGCRiskDetails": {
+		"aigcRiskDetail": [{
+			"clientType": "Organization",
+			"salutation": "Mr",
+			"custId": "1000909610",
+			"custName": "{{proposal.data.client_fullname|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"dateOfBirth": "",
+			"maritalStatus": "",
+			"gender": "",
+			"sourceOfFunds": "",
+			"uid": "",
+			"occupation": "other",
+			"address1": "{{proposal.data.proposer_address_line1|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"address2": "{{proposal.data.proposer_address_line2|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"address3": "{{proposal.data.proposer_address_line3|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"pincode": "{{proposal.data.proposer_pincode}}",
+			"city": "{{proposal.data.proposer_city}}",
+			"state": "{{proposal.data.proposer_state}}",
+			"emailId": "{{proposal.data.client_email_id}}",
+			"pan": "{{proposal.data.pan_number}}",
+			"mobileNo": "{{policy.data.search.customer_mobileno}}",
+			"gstin": "{{proposal.data.gstin_no}}",
+			"hypothecation": "",
+			{% set currentYear  ="now"|date("yyyy") %}
+			{% set currentMonth  ="now"|date("MM") %}
+			{% set currentDate  ="now"|date("dd") %}
+			{% set gc_date_yyy= proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'yyyy') %}
+			{% set gc_date_mm= proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'mm') %}
+			{% set gc_date_dd= proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'dd') %}
+			{% if gc_date_yyy>currentYear %}
+				"proposalDt": "{{currentDate}}/{{currentMonth}}/{{currentYear}}",
+			{% elseif (gc_date_yyy>=currentYear) and (gc_date_mm>currentMonth) %}
+				"proposalDt": "{{currentDate}}/{{currentMonth}}/{{currentYear}}",
+			{% elseif (gc_date_yyy==currentYear) and (gc_date_mm==currentMonth) and (gc_date_dd > currentDate) %}
+				"proposalDt": "{{currentDate}}/{{currentMonth}}/{{currentYear}}",
+			{% else %}
+				"proposalDt": "{{proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
+			{% endif %}
+			"policyStartDt": "{{proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
+			"policyEndDt": "{{proposal.data.pro_policy_end_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
+			"applicationNo": "{{proposal.data.gc_product_code}}{{"now"|date("Y")|slice(2,3)}}{{proposal.proposal_no|slice(8,15)}}",
+			"applicationDt": "{{proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
+			"partnerAppNo": "{{proposal.quote_id}}",
+			"partnerAppDt": "{{proposal.data.quote_date|gc_date_convert('yyyy-mm-dd', 'dd/mm/yyyy')}}",
+			{% if data.policy_doc_not_applicable == 'Y' %}
+            	"policyNo": "",
+            {% else %}	
+	            "policyNo": "{{policy.policy_no}}",
+            {% endif %}
+			"producerCode": "{{policy.broker_code}}",
+			"officeBranchLocCode": "{{proposal.data.location_code|slice(1,4)}}",
+			"officeBranchLocName": "",
+			"serviceTaxExempt": "No Exemption",
+			"pupApprovalInPlace": "PUP",
+			"particularsOfWork": "{{proposal.data.work_nature|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"riskAddress1": "{{proposal.data.loc_1_address_line1|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"riskAddress2": "{{proposal.data.loc_1_address_line2|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"riskAddress3": "{{proposal.data.loc_1_address_line3|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"riskLandmark": "",
+			"riskPincode": "{{proposal.data.loc_1_pincode}}",
+			"riskCity": "{{proposal.data.loc_1_city}}",
+			"riskDistrict": "",
+			"riskState": "{{proposal.data.loc_1_state}}",
+			"riskCountry": "",
+			"policyType": "Unnamed",
+			"receiptNumber": "102001000489392",
+			"modeofEntry": "Direct",
+			"cdacNumber": "",
+			"intermediaryCode": "{{policy.broker_code}}",
+			"dealerCode": "{{proposal.data.sol_id}}",
+			"payertype": "{{payment.details[0].data.payer_type}}",
+			"officeLocation": "{{proposal.data.location_code|slice(1,4)}}",
+			"custNamePayerName": "{{proposal.data.customer_name}}",
+			"instrumentRcvdDate": "09/11/2022",
+			"applicationNumberPolicyno": "",
+			"receiptMode": "{{payment.details[0].data.payment_mode}}",
+            "chequeDDTransactionID": "{{payment.details[0].data.short_cheque_no}}",
+			"bankName": "{{payment.details[0].bank_name}}",
+			"chequeDDTransactionDate": "{{payment.details[0].cheque_date}}",
+			"receiptAmount": "{{proposal.data.net_premium}}",
+			"authCode": "{{payment.details[0].data.producer_code}}",
+            {% if proposal.data.business_type %}
+				"businessType": "01",
+			{% else %}
+				"businessType": "01",
+			{% endif%}		
+        	"relationship": "{{payment.details[0].data.payer_relation}}",
+			"customerFinancierDealerID": "{{policy.customer_id}}",
+			"transactionType": "04",
+			"mid": 17092036,
+			"tid": 17092036,
+			"houseBankACNo": "{{payment.details[0].data.account_number}}",
+			"depositSlipNo": 17122039,
+			"houseBank":"{{payment.details[0].data.house_bank}}",
+			"ifsccode": "{{payment.details[0].data.ifsc_code}}",
+			"clmLoadingDis": "{{proposal.data.calim_loading_uw}}",
+			"isUwCompleted": "Yes",
+			{% if proposal.data.location_type =='All over India' %}
+				"singleLocation": "No",
+				"allOverIndia": "Yes",
+			{% else %}
+				"singleLocation": "Yes",
+				"allOverIndia": "No",
+			{% endif%}
+			"secondaryLoc1": "{{proposal.data.location_group_1}}",
+			"secondaryLoc1Wt": "{{proposal.data.cont_per_1}}",
+			"secondaryLoc2": "{{proposal.data.location_group_2}}",
+			"secondaryLoc2Wt": "{{proposal.data.cont_per_2}}",
+			"secondaryLoc3": "{{proposal.data.location_group_3}}",
+			"secondaryLoc3Wt": "{{proposal.data.cont_per_3}}",
+			"printFlag": "Yes",
+			"renewalFlag": "Automatic",
+			{% if proposal.data.nstp_flag =='No' %}
+				"sourcingType": "PUP",
+			{% else %}
+				"sourcingType": "NON PUP",
+			{% endif%}
+			"recordno": 10298,
+			{% if proposal.data.nstp_flag =='No' %}
+				"nameofunderwriter": "",
+			{% else %}
+				"nameofunderwriter": "Amit Patel",
+			{% endif%}
+			"policyLevelRemarks": "{{proposal.data.final_load_disc_per}}{{proposal.data.uw_remarks}}",
+			"paceId": "{{pace_payment_id}}" 
+			}]
+	},
+
+	"objPastPol": {
+		"pastPolicyDetails": [{
+			"partnerAppNo": "",
+			"previousPolYr": "",
+			"previousInsurerName": "",
+			"expiringPolNo": "",
+			"prevPolStartDt": "",
+			"prevPolEndDt": "",
+			"clmCount": "",
+			"claimAmt": "",
+			"clmPremium": "",
+			"clmRatio": ""
+		}]
+	},
+
+"objEmpDtls": {
+		"employeeDetails": [
+            {% for n in [0..proposal.data.employeeDetails|length] %}
+            {% if proposal.data.employeeDetails[n].tradeCategory !=null %}
+            {
+			"partnerAppNo": "{{proposal.quote_id}}",
+			"tradeCatergory": "{{proposal.data.employeeDetails[n].tradeCategory|slice(0,4)}}",
+			"location":"{{proposal.data.cl_zone}}",
+			{% if proposal.data.employeeDetails[n].monthlyWages <=15000 %}
+				"wageBand": "Low",
+			{% else %}
+				"wageBand": "High",
+			{% endif%}
+			"grouping": "{{proposal.data.employeeDetails[n].grouping}}",
+			"ecRate": "{{proposal.data.employeeDetails[n].ecRate}}",
+			"nameOfEmpWorkman": "",
+			"numOfWorkers": "{{proposal.data.employeeDetails[n].numOfWorkers|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"typeOfWorkers": "{{proposal.data.employeeDetails[n].typeOfWorkers|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			{% set placesOfEmployment= proposal.data.loc_1_address_line1~" "~proposal.data.loc_1_address_line2~""~proposal.data.loc_1_address_line3~""
+             ~proposal.data.loc_1_pincode~""~proposal.data.loc_1_state~""~proposal.data.loc_1_city~""~proposal.data.loc_1_city_state
+			 ~" \ "~proposal.data.loc_2_address_line1~" "~proposal.data.loc_2_address_line2~""~proposal.data.loc_2_address_line3~""
+             ~proposal.data.loc_2_pincode~""~proposal.data.loc_2_state~""~proposal.data.loc_2_city~""~proposal.data.loc_2_city_state
+             ~" \ "~proposal.data.loc_3_address_line1~" "~proposal.data.loc_3_address_line2~""~proposal.data.loc_3_address_line3~""
+             ~proposal.data.loc_3_pincode~""~proposal.data.loc_3_state~""~proposal.data.loc_3_city~""~proposal.data.loc_3_city_state
+             ~" \ "~proposal.data.loc_4_address_line1~" "~proposal.data.loc_4_address_line2~""~proposal.data.loc_4_address_line3~""
+             ~proposal.data.loc_4_pincode~""~proposal.data.loc_4_state~""~proposal.data.loc_4_city~""~proposal.data.loc_4_city_state
+             ~" \ "~proposal.data.loc_5_address_line1~" "~proposal.data.loc_5_address_line2~""~proposal.data.loc_5_address_line3~""
+             ~proposal.data.loc_5_pincode~""~proposal.data.loc_5_state~""~proposal.data.loc_5_city~""~proposal.data.loc_5_city_state%} 
+	
+			"placesOfEmployment": "{{placesOfEmployment|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"monthlyWages": "{{proposal.data.employeeDetails[n].monthlyWages}}",
+			"totalWages": "{{proposal.data.employeeDetails[n].totalWages}}",
+			"categoryId": "{{proposal.data.employeeDetails[n].tradeCategory|slice(0,4)}}"
+		}
+{% if [n+1] ==[proposal.data.employeeDetails|length] %}
+        {{""}}
+ {% else %}
+        {{","}}
+{%endif %}
+
+{% endif %}
+{% endfor %}
+		]
+	},
+
+	"objExtfact": {
+		"extensionsFactors": [{
+	  "partnerAppNo": "{{proposal.quote_id}}",
+		{% if proposal.data.option_1 =='Trained' %}			
+			"workForce": "Yes",
+		{% else %}
+			"workForce": "No",
+		{% endif%}
+		"workForceDis": "{{proposal.data.option_per_1}}",
+		{% if proposal.data.option_2 =='yes' %}		
+		"safetyGears": "Yes",
+		{% else %}
+		"safetyGears": "No",
+		{% endif%}
+		"safetyGearsDisc": "{{proposal.data.option_per_2}}",
+      {% if proposal.data.option_3 =='yes' %}		
+		"fireProtectEquip": "Yes",
+	{% else %}
+		"fireProtectEquip": "No",
+	{% endif%}
+      "fireProtectEquipDisc": "{{proposal.data.option_per_3}}",
+      {% if proposal.data.option_4 =='More than 3 years' %}		
+		"expOfContracter": "Yes",
+	{% else %}
+		"expOfContracter": "No",
+	{% endif%}
+      "expOfContracterDisc": "{{proposal.data.option_per_4}}",
+	{% if proposal.data.option_5 =='yes' %}		
+	"security": "Yes",
+		{% else %}
+	"security": "No",
+	{% endif%}
+      "securityDisc": "{{proposal.data.option_per_5}}",
+      {% if proposal.data.option_6 =='0-100' %}		
+	"groupSize": "No",
+	{% else %}
+	"groupSize": "Yes",
+	{% endif%}
+      "groupSizeDisc": "{{proposal.data.option_per_6}}",
+      {% if proposal.data.lp_option_option_1 =='yes' %}		
+	"wrkersWrkingAtHt": "Yes",
+{% else %}
+	"wrkersWrkingAtHt": "No",
+{% endif%}
+      "wrkersWrkingAtHtDisc": "{{proposal.data.lp_option_per_1}}",
+      {% if proposal.data.lp_option_option_2 =='yes' %}		
+	"offshoreRisk": "Yes",
+{% else %}
+	"offshoreRisk": "No",
+{% endif%}
+      "offshoreRiskDisc": "{{proposal.data.lp_option_per_2}}",
+      {% if proposal.data.lp_option_option_3 =='yes' %}		
+	"staffInHazardActi": "Yes",
+{% else %}
+	"staffInHazardActi": "No",
+{% endif%}
+      "staffInHazardActiDisc": "{{proposal.data.lp_option_per_3}}",
+	{% if proposal.data.lp_option_option_4 =='Hilly' %}		
+		"terrainOfSite": "Yes",
+	{% else %}
+		"terrainOfSite": "No",
+	{% endif%}
+      "terrainOfSiteDisc": "{{proposal.data.lp_option_per_4}}",
+      {% if proposal.data.lp_option_option_5 =='Manual' %}		
+			"extentOfAuto": "Yes",
+	 {% else %}
+			"extentOfAuto": "No",
+	{% endif%}
+      "extentOfAutoDisc": "{{proposal.data.lp_option_per_5}}",
+      "gnrlFeatureDisc": "{{proposal.data.general_risk_protection_uw}}",
+      "lmtAsECAct": "",
+      "lmtFatalAct": "",
+      {% if (proposal.data.od_per_person_limit_uw != null) or (proposal.data.od_actuals_uw =='yes') or (proposal.data.od_aggregate_limit > '0') %}{#Newchanges#}
+		"occDisease":"Yes",
+	    {% else %}
+		"occDisease":"No",
+	  {% endif %}
+      "occDisePerEmp": "{{proposal.data.od_per_person_limit_uw}}",
+      "occDiseAggLimit": "{{proposal.data.od_aggregate_limit_uw}}",
+      "occDiseRate": "{{proposal.data.od_loading}}",
+      {% if proposal.data.od_actuals_uw =='yes' %}
+		"actualOd":"Yes",
+	  {% else %}
+		"actualOd":"No",
+	 {% endif %}
+		{% if (proposal.data.medex_option =='0') or (proposal.data.medex_option =="")  %}
+			"medexLmtPerEmp": "{{proposal.data.medex_per_person_limit}}",
+			"medexAggLimit": "{{proposal.data.medex_aggregate_limit}}",
+		{% elseif (proposal.data.medex_option =='> 1,00,000') or (proposal.data.medex_actuals|lower =='yes')%}
+			"medexLmtPerEmp": "{{proposal.data.medex_per_person_limit}}",
+			"medexAggLimit": "{{proposal.data.medex_aggregate_limit}}",
+		{% else %}
+			"medexLmtPerEmp": "{{proposal.data.medex_option}}",
+			"medexAggLimit": "{{proposal.data.medex_aggregate_limit}}",
+		{% endif%}
+		"mededRate": "{{proposal.data.medex_loading}}",
+		{% if (proposal.data.medex_option > '0') or (proposal.data.medex_actuals|lower == 'yes') or (proposal.data.medex_aggregate_limit > '0') %}
+		    "medex": "Yes",
+		{% else %}
+		    "medex": "No",
+		{% endif %}
+		{% if proposal.data.medex_actuals =='no' %}
+		"actualMedex": "No",
+		{% else %}
+		"actualMedex": "Yes",
+		{% endif%}
+		"location": "{{proposal.data.medex_location}}",
+		"extCll": "Yes",
+		"extCllLmtPerEmp": "",
+		"extCllLmtPerAcci": "",
+		"extCllAggreLimit": "750000000",
+		{% if proposal.data.contractors_coverd =='yes' %}
+		"isExtForEmp": "Yes",
+        {% else %}
+        "isExtForEmp": "No",
+        {% endif%}
+        "lmtEc": "",
+        "ecRate": "",
+        {% if proposal.data.contractors_coverd =='yes' %}
+        "extSubContractors": "Yes",
+        "includeAllSubCont": "Yes",
+        {% else %}
+        "extSubContractors": "No",
+        "includeAllSubCont": "No",
+        {% endif%}
+		{% if proposal.data.terrorism_appl =='yes' %}
+			"terrorism": "Yes"
+		{% else %}
+			"terrorism": "No"
+		{% endif%}
+			}]
+	},
+
+	"objPremium": {
+		"premiumDetails": [
+            {% for n in [0..proposal.data.premiumDetails|length] %}
+            {% if proposal.data.premiumDetails[n].trade_category_name !=null %}
+            {
+		 "serialNo": "{{n+1}}",
+		 "partnerAppNo": "{{proposal.quote_id}}",
+		 "tradeCat": "{{proposal.data.premiumDetails[n].trade_category_code}}",
+		 "tradeCatergory": "{{proposal.data.premiumDetails[n].trade_category_name|slice(0,4)}}",
+		 "ecPremium": "{{proposal.data.premiumDetails[n].statutory_prem}}",
+		 "medexPremium": "{{proposal.data.premiumDetails[n].medex_prem}}",
+		 "odPremium": "{{proposal.data.premiumDetails[n].od_prem}}",
+		 "extContEmpCvrPrem": ""
+		}
+		{% if [n+1] ==[proposal.data.premiumDetails|length] %}
+         {{""}}
+        {% else %}
+         {{","}}
+         {%endif %}
+
+        {% endif %}
+        {% endfor %}]
+	},
+
+	"objClauseMaster": {
+	"clausesMaster": [
+		{% for n in [0..proposal.data.clausesMaster|length] %}
+			{% if proposal.data.clausesMaster[n] %}
+				{
+					"serialNo": "{{n+1}}",
+					"partnerAppNo": "{{proposal.quote_id}}",
+					"clauseCode": "{{proposal.data.clausesMaster[n].clauseCode}}",
+					"clauseDesc": "{{proposal.data.clausesMaster[n].clauseDesc|replace({"\n": "", "\r": "", "\t": "",'"':''})}}"
+				}
+			{% if [n+1] ==[proposal.data.clausesMaster|length] %}
+             {{""}}
+             {% else %}
+		    {{","}}
+	         {%endif %}
+
+			{% endif %}
+		{% endfor %}
+	]
+},
+	"objAddons": {
+		"addons": [{
+			"serialNo": 1,
+			"partnerAppNo":"{{proposal.quote_id}}",
+			"addons": "XYZ",
+			"aggLimit": "",
+			"perPersonLimit": "",
+			"rate": "",
+			"premium": "",
+			"discountPercRisk": ""
+		}]
+	},
+	"iTEMPLATENO": 1,
+	"userId": "TASKUSER"
+}
