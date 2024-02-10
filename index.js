@@ -1,8 +1,10 @@
 import policy_json from './5190009379.json' assert { type: "json" };
 import node_fetch from 'node-fetch'
-import fs from 'fs';
+import fs from 'fs-extra';
 import  xlsx from "xlsx";
 import { json } from 'stream/consumers';
+import ExcelConverter from './excel.js'
+
 const config = policy_json.data[0];
 let workbook=xlsx.readFile("./EC_CLAUSE_MASTER.xlsx");//reading clauses masster
 let worksheet=workbook.Sheets[workbook.SheetNames[0]]
@@ -27,11 +29,11 @@ else{
 if(config.proposal.data.employeeDetails == undefined ){
 
     employeeDetails=[];
-clausesMaster=[];
+    clausesMaster=[];
 
- var count=0;
+    var count=0;
 
- let tradeObj=[]
+    let tradeObj=[]
 
  
  //console.log(config.proposal.data[`trade_catg_${1}`]);
@@ -174,6 +176,20 @@ const Ecproposal=await node_fetch('https://connectbeta.tataaiginsurance.in/integ
 })
  const Ecproposal_resp =await Ecproposal.json();
 
- console.log(Ecproposal_resp.errorLog.errorLog[0])
+//  console.log(Ecproposal_resp.errorLog.errorLog[0])
+//  console.log(fs.existsSync('./policy_response.json'))
 
+ if(fs.existsSync('./policy_response.json')){
+    let a = fs.readJSONSync('./policy_response.json');
+     a.push(Ecproposal_resp.errorLog.errorLog[0])
+     fs.writeJsonSync('./policy_response.json',a)
 
+     //console.log(ExcelConverter)
+ }
+else{
+    let a =[]
+     a.push(Ecproposal_resp.errorLog.errorLog[0])
+     fs.writeJsonSync('./policy_response.json',a)
+
+     //console.log(ExcelConverter)
+}
