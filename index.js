@@ -1,10 +1,11 @@
-import policy_json from './5190009379.json' assert { type: "json" };
+//import policy_json from './5190009379.json' assert { type: "json" };
 import node_fetch from 'node-fetch'
 import fs from 'fs-extra';
 import  xlsx from "xlsx";
 import { json } from 'stream/consumers';
-import ExcelConverter from './excel.js'
+ import ExcelConverter from './excel.js'
 
+const policy_json=fs.readJSONSync("./5190009379.json");
 const config = policy_json.data[0];
 let workbook=xlsx.readFile("./EC_CLAUSE_MASTER.xlsx");//reading clauses masster
 let worksheet=workbook.Sheets[workbook.SheetNames[0]]
@@ -176,8 +177,8 @@ const Ecproposal=await node_fetch('https://connectbeta.tataaiginsurance.in/integ
 })
  const Ecproposal_resp =await Ecproposal.json();
 
-//  console.log(Ecproposal_resp.errorLog.errorLog[0])
-//  console.log(fs.existsSync('./policy_response.json'))
+ console.log(Ecproposal_resp.errorLog.errorLog[0])
+console.log(fs.existsSync('./policy_response.json'))
 
  if(fs.existsSync('./policy_response.json')){
     let a = fs.readJSONSync('./policy_response.json');
