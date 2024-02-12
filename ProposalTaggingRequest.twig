@@ -1,0 +1,222 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://stub.unotechsoft.com/wsdl/AccountService/" xmlns:wcf="http://schemas.datacontract.org/2004/07/WcfAccConfService" xmlns:acc1="http://schemas.datacontract.org/2004/07/AccountsBL" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+
+
+    <soapenv:Header />
+    <soapenv:Body>
+        <acc:proposalTaggingcumpolicygenration>
+            <acc:source>{{ipds_source}}</acc:source>
+            <acc:medium>{{ipds_medium}}</acc:medium>
+            <acc:campaign>{{ipds_campaign}}</acc:campaign>
+            <acc:strLVTokenID />
+            <acc:objUserDataPaymentTaging>
+                <wcf:AutoAcceptanceApplicable>0</wcf:AutoAcceptanceApplicable>
+                <wcf:BankChargeAmt>0</wcf:BankChargeAmt>
+                <wcf:BankChargeArr ></wcf:BankChargeArr >
+                <wcf:BusinessChannelId ></wcf:BusinessChannelId >
+                <wcf:BusinessType>1</wcf:BusinessType>
+                <wcf:CallSLEnv>AP</wcf:CallSLEnv>
+                <wcf:CheckAutoProposal>1</wcf:CheckAutoProposal>
+                <wcf:CheckAutopayment>1</wcf:CheckAutopayment>
+         <wcf:ClsPaymentDetailsGrd>     
+{% set items = twig_list %}
+        {% for column in items %}
+
+            {#<td>{{ column }}</td>#}
+			{#<td>{{ ('sub_receipt_no_' ~column ) |join }}</td>#}
+		
+			 <wcf:ClsPaymentIdGrid>
+                        <wcf:ApplicationNo ></wcf:ApplicationNo>
+                        <wcf:BalanceAmount ></wcf:BalanceAmount>
+                        <wcf:CDAccountNo></wcf:CDAccountNo>
+                        <wcf:CollectionOffice></wcf:CollectionOffice>
+                        <wcf:DepositBanktype></wcf:DepositBanktype>
+                        <wcf:DraweeBankName></wcf:DraweeBankName>
+                        <wcf:DraweeBranchName></wcf:DraweeBranchName>
+                        <wcf:Homebank></wcf:Homebank >
+                        <wcf:HomebankList>
+                            <arr:anyType></arr:anyType>
+                        </wcf:HomebankList>
+                        <wcf:IsChecked>true</wcf:IsChecked>
+                        <wcf:ModeofEntry></wcf:ModeofEntry>
+                        <wcf:PayerID>{{customer_id}}</wcf:PayerID>
+                        <wcf:PayerName></wcf:PayerName>
+                        <wcf:PayerType></wcf:PayerType>
+						
+						{% if loop.index == 1 %}
+                        <wcf:PaymenID>{{sub_receipt_no_1}}</wcf:PaymenID>
+						{% elseif loop.index == 2 %}
+						<wcf:PaymenID>{{sub_receipt_no_2}}</wcf:PaymenID>
+						{% elseif loop.index == 3 %}
+						<wcf:PaymenID>{{sub_receipt_no_3}}</wcf:PaymenID>
+						{% elseif loop.index == 4 %}
+						<wcf:PaymenID>{{sub_receipt_no_4}}</wcf:PaymenID>
+						{% elseif loop.index == 5 %}
+						<wcf:PaymenID>{{sub_receipt_no_5}}</wcf:PaymenID>
+						{% elseif loop.index == 6 %}
+						<wcf:PaymenID>{{sub_receipt_no_6}}</wcf:PaymenID>
+						{% elseif loop.index == 7 %}
+						<wcf:PaymenID>{{sub_receipt_no_7}}</wcf:PaymenID>
+						{% elseif loop.index == 8 %}
+						<wcf:PaymenID>{{sub_receipt_no_8}}</wcf:PaymenID>
+						{% elseif loop.index == 9 %}
+						<wcf:PaymenID>{{sub_receipt_no_9}}</wcf:PaymenID>
+						{% elseif loop.index == 10 %}
+						<wcf:PaymenID>{{sub_receipt_no_10}}</wcf:PaymenID>
+						{% elseif loop.index == 11 %}
+						<wcf:PaymenID>{{sub_receipt_no_11}}</wcf:PaymenID>
+						{% elseif loop.index == 12 %}
+						<wcf:PaymenID>{{sub_receipt_no_12}}</wcf:PaymenID>
+						{% elseif loop.index == 13 %}
+						<wcf:PaymenID>{{sub_receipt_no_13}}</wcf:PaymenID>
+						{% endif %}
+						
+						
+                        <wcf:PaymentApplicationNo></wcf:PaymentApplicationNo>
+						
+						{% if loop.index == 1 %}
+                        <wcf:PaymentDate>{{payment_date_1}}</wcf:PaymentDate>
+						{% elseif loop.index == 2 %}
+						<wcf:PaymentDate>{{payment_date_2}}</wcf:PaymentDate>
+						{% elseif loop.index == 3 %}
+						<wcf:PaymentDate>{{payment_date_3}}</wcf:PaymentDate>
+						{% elseif loop.index == 4 %}
+						<wcf:PaymentDate>{{payment_date_4}}</wcf:PaymentDate>
+						{% elseif loop.index == 5 %}
+						<wcf:PaymentDate>{{payment_date_5}}</wcf:PaymentDate>
+						{% elseif loop.index == 6 %}
+						<wcf:PaymentDate>{{payment_date_6}}</wcf:PaymentDate>
+						{% elseif loop.index == 7 %}
+						<wcf:PaymentDate>{{payment_date_7}}</wcf:PaymentDate>
+						{% elseif loop.index == 8 %}
+						<wcf:PaymentDate>{{payment_date_8}}</wcf:PaymentDate>
+						{% elseif loop.index == 9 %}
+						<wcf:PaymentDate>{{payment_date_9}}</wcf:PaymentDate>
+						{% elseif loop.index == 10 %}
+						<wcf:PaymentDate>{{payment_date_10}}</wcf:PaymentDate>
+						{% endif %}
+                        <wcf:PaymentMode></wcf:PaymentMode>
+                        <wcf:PaymentNo></wcf:PaymentNo>
+                        <wcf:PaymentReceivedDate></wcf:PaymentReceivedDate>
+                        <wcf:PaymentStatus></wcf:PaymentStatus>
+                        <wcf:Policynumber></wcf:Policynumber>
+                        <wcf:ProducerCd></wcf:ProducerCd>
+                        <wcf:ProposalNumber></wcf:ProposalNumber>
+                        <wcf:Relationship></wcf:Relationship>
+                        <wcf:RowNum>{{loop.index}}</wcf:RowNum>
+                        <wcf:Subreceiptamnt></wcf:Subreceiptamnt>
+                        <wcf:Subreceiptblncamnt></wcf:Subreceiptblncamnt>
+                        <wcf:Subreceiptcrtndate></wcf:Subreceiptcrtndate>
+                        <wcf:Subreceiptno></wcf:Subreceiptno>
+                        <wcf:Subreceiptoffccode></wcf:Subreceiptoffccode>
+                        <wcf:TagSequenceList>
+                            <arr:anyType></arr:anyType>
+                        </wcf:TagSequenceList>
+                        <wcf:TotalAmount></wcf:TotalAmount>
+                    </wcf:ClsPaymentIdGrid>
+        {% endfor %}
+                </wcf:ClsPaymentDetailsGrd>
+				
+                <wcf:ClsProposalDetailsGrd>
+                    <wcf:ClsPolicyIdGrid>
+                        <wcf:BankCharge>0</wcf:BankCharge>
+                        <wcf:BusinessChannelID></wcf:BusinessChannelID>
+                        <wcf:CovernoteNumber></wcf:CovernoteNumber>
+                        <wcf:CustomerName></wcf:CustomerName>
+                        <wcf:IsChecked>true</wcf:IsChecked>
+                        <wcf:PolicyNumber></wcf:PolicyNumber>
+                        <wcf:PolicyStartDate></wcf:PolicyStartDate>
+                        <wcf:PropApplicationNo></wcf:PropApplicationNo>
+                        <wcf:PropCustId></wcf:PropCustId>
+                        <wcf:ProposalAmount>{{proposal_amount}}</wcf:ProposalAmount>
+                        <wcf:ProposalDate></wcf:ProposalDate>
+						{% if is_product_code == 'bgr' or is_product_code == 'home-protect' %}
+						 <wcf:ProposalNo>{{gc_proposal_no_final}}</wcf:ProposalNo>
+						 {% else %}
+                        <wcf:ProposalNo>{{proposalno}}</wcf:ProposalNo>
+						{% endif %}
+                        <wcf:RowNum></wcf:RowNum>
+                        <wcf:ServiceChannelID></wcf:ServiceChannelID>
+                        <wcf:TransactionDate></wcf:TransactionDate>
+                        <wcf:UnpaidAmount></wcf:UnpaidAmount>
+                    </wcf:ClsPolicyIdGrid>
+                </wcf:ClsProposalDetailsGrd>
+                <wcf:ConcateInstrumentId></wcf:ConcateInstrumentId>
+                <wcf:ConcateProposalNumbers></wcf:ConcateProposalNumbers>
+                <wcf:CoverNoteNumber></wcf:CoverNoteNumber>
+                <wcf:CustomerName></wcf:CustomerName>
+                <wcf:DealerId>0</wcf:DealerId>
+                <wcf:DealerName></wcf:DealerName>
+                <wcf:DepartmentCode></wcf:DepartmentCode>
+                <wcf:DraweeBankBranch></wcf:DraweeBankBranch>
+                <wcf:DraweeBankName></wcf:DraweeBankName>
+                <wcf:FinancierID>0</wcf:FinancierID>
+                <wcf:FinancierIDList></wcf:FinancierIDList>
+                <wcf:FinancierName></wcf:FinancierName>
+				{% if is_product_code == 'bgr' or is_product_code == 'home-protect' %}
+				<wcf:GUIDWorkFlow>{{workflowid_final |slice(0,16)}}</wcf:GUIDWorkFlow>
+				{% else %}
+                <wcf:GUIDWorkFlow>{{workflowid |slice(0,16)}}</wcf:GUIDWorkFlow>
+				{% endif %}
+                <wcf:GenPolicy>1</wcf:GenPolicy>
+                <wcf:HouseBankId></wcf:HouseBankId>
+                <wcf:InstrumentAmount>{{proposal_amount}}</wcf:InstrumentAmount>
+                <wcf:InstrumentId></wcf:InstrumentId>
+                <wcf:InstrumentNo></wcf:InstrumentNo>
+                <wcf:InstrumetDate></wcf:InstrumetDate>
+                <wcf:IntermediaryId>0</wcf:IntermediaryId>
+                <wcf:Is64vbAllowed>false</wcf:Is64vbAllowed>
+                <wcf:IsAutoPaymentChecked>false</wcf:IsAutoPaymentChecked>
+                <wcf:IsAutoPropChecked>false</wcf:IsAutoPropChecked>
+                <wcf:IsCreditPolicy>false</wcf:IsCreditPolicy>
+                <wcf:IsShortFallNonAllowedFlg>false</wcf:IsShortFallNonAllowedFlg>
+                <wcf:IsShortPremAllowedFlg>false</wcf:IsShortPremAllowedFlg>
+                <wcf:MIBLShortfallFlg></wcf:MIBLShortfallFlg>
+                <wcf:MaxPremium>0</wcf:MaxPremium>
+                <wcf:ModeOfEntry>5</wcf:ModeOfEntry>
+                <wcf:MonthlyExtension>0</wcf:MonthlyExtension>
+                <wcf:OfficeCode>{{BusinessLocation}}</wcf:OfficeCode>
+                <wcf:OfficeCodeUnmasked>{{BusinessLocation}}</wcf:OfficeCodeUnmasked>
+                <wcf:OtherBankApplicability>0</wcf:OtherBankApplicability>
+                <wcf:OtherOffCd></wcf:OtherOffCd>
+                <wcf:PayerId>{{customer_id}}</wcf:PayerId>
+                <wcf:PayerType>1</wcf:PayerType>
+                <wcf:PaymentIds>
+                    <arr:string></arr:string>
+                </wcf:PaymentIds>
+                <wcf:PaymentInfo></wcf:PaymentInfo>
+                <wcf:PaymentMode></wcf:PaymentMode>
+                <wcf:PaymentStatus></wcf:PaymentStatus>
+                <wcf:PaymentType></wcf:PaymentType>
+                <wcf:PenaltyAmount></wcf:PenaltyAmount>
+                <wcf:PolicyNumber></wcf:PolicyNumber>
+                <wcf:PolicyStartDate></wcf:PolicyStartDate>
+                <wcf:ProposalAmount>{{proposal_amount}}</wcf:ProposalAmount>
+                <wcf:ProposalCustomerId></wcf:ProposalCustomerId>
+                <wcf:ProposalDate></wcf:ProposalDate>
+                <wcf:ProposalDateD></wcf:ProposalDateD>
+                <wcf:ProposalDates>
+                    <arr:string></arr:string>
+                </wcf:ProposalDates>
+                <wcf:ProposalId></wcf:ProposalId>
+                <wcf:ProposalNumbers>
+                    <arr:string></arr:string>
+                </wcf:ProposalNumbers>
+                <wcf:ProposalUnPaidAmount>0</wcf:ProposalUnPaidAmount>
+                <wcf:ReceivedDate></wcf:ReceivedDate>
+                <wcf:ServiceChannelId></wcf:ServiceChannelId>
+                <wcf:SessionTransactionDate></wcf:SessionTransactionDate>
+                <wcf:SessionTransactionId></wcf:SessionTransactionId>
+                <wcf:ShortPremium>0</wcf:ShortPremium>
+                <wcf:TagSequence>0</wcf:TagSequence>
+                <wcf:TotalInstrumentBalanceAmount>0</wcf:TotalInstrumentBalanceAmount>
+                <wcf:TransactionId>100000501545269</wcf:TransactionId>
+                <wcf:TransactionTime>{{transaction_time}}</wcf:TransactionTime>
+                <wcf:TypeOfBusiness></wcf:TypeOfBusiness>
+                <wcf:UserId>TASKUSER</wcf:UserId>
+                <wcf:WorkflowName></wcf:WorkflowName>
+            </acc:objUserDataPaymentTaging>
+            <acc:dicLVWFParams />
+        </acc:proposalTaggingcumpolicygenration>
+
+    </soapenv:Body>
+</soapenv:Envelope>
