@@ -177,6 +177,12 @@ const Ecproposal=await node_fetch('https://connectbeta.tataaiginsurance.in/integ
 })
  const Ecproposal_resp =await Ecproposal.json();
 
+
+const tagging = await node_fetch('https://pipuat.tataaiginsurance.in/cxf/Account/AccountConfServices')
+
+
+
+
  console.log(Ecproposal_resp.errorLog.errorLog[0])
 console.log(fs.existsSync('./policy_response.json'))
 
