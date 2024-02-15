@@ -1,0 +1,129 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://stub.unotechsoft.com/wsdl/AccountService/" xmlns:wcf="http://schemas.datacontract.org/2004/07/WcfAccConfService" xmlns:acc1="http://schemas.datacontract.org/2004/07/AccountsBL" xmlns:arr="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <soapenv:Header />
+    <soapenv:Body>
+        <acc:saveReceiptData>
+            <acc:source>{{source}}</acc:source>
+			
+            <acc:medium>{{medium}}</acc:medium>
+            <acc:campaign>{{campaign}}</acc:campaign>
+			
+            <acc:strLVTokenID />
+            <acc:objUserDataSubReceipt>
+
+
+				
+				<wcf:Amount>{{Amount}}</wcf:Amount>
+                <wcf:ApplicationNo>{{Application_No}} </wcf:ApplicationNo>
+                <wcf:AuthUserGrp />
+                <wcf:CallSLEnv>AP</wcf:CallSLEnv>
+                <wcf:ChildPaymentID />
+
+                
+					<wcf:ConcatPaymentID>NEWPOLICY|{{lob_code}}|{{product_code}}|{{customerId}}|{{Amount}}||{{Application_No}} ||{{office_code}}||;</wcf:ConcatPaymentID>
+				
+			
+				<wcf:CoverNoteNo />
+                <wcf:CustID>{{customerId}}</wcf:CustID>
+                <wcf:CustName />
+                <wcf:DealerCode />
+                <wcf:DeallocateTransactionDate />
+                <wcf:DeallocateUserID />
+                <wcf:GridData>
+                    <acc1:ClsSubReceipt>
+                        <acc1:AllocatedAmount />
+                        <acc1:Amount>{{Amount}}</acc1:Amount>
+                        <acc1:ApplicationNo></acc1:ApplicationNo>
+                        <acc1:BalAmount />
+                        <acc1:CallSLEnv />
+                        <acc1:ConcatPaymentID />
+                        <acc1:CoverNoteNo />
+                        <acc1:CustID></acc1:CustID>
+                        <acc1:CustName></acc1:CustName>
+                        <acc1:DeallocateTransactionDate />
+                        <acc1:DeallocateUserID />
+                        <acc1:DisplayOffCd />
+                        <acc1:EndtPolicyNo />
+                        <acc1:ErrorCode />
+                        <acc1:ErrorMsg />
+                        <acc1:GridData />
+                        <acc1:LOB />
+                        <acc1:OthersType />
+                        <acc1:ParentPaymentID />
+                        <acc1:PayerType />
+                        <acc1:PaymentID />
+                        <acc1:PaymentStatus />
+                        <acc1:PolicyNo />
+                        <acc1:ProductCd />
+                        <acc1:PropCustID />
+                        <acc1:PropCustName />
+                        <acc1:SlNo>0</acc1:SlNo>
+                        <acc1:Status>0</acc1:Status>
+                        <acc1:StatusValueLst>
+                            <arr:string />
+                        </acc1:StatusValueLst>
+                        <acc1:Tagg_Untagg_Payment_Id />
+                        <acc1:TransType />
+                        <acc1:TransactionDate />
+                        <acc1:TransactionID />
+                        <acc1:TransactionType />
+                        <acc1:UnMaskedOffCd />
+                        <acc1:UserID />
+                        <acc1:WorkflowGUID />
+                        <acc1:WorkflowParentPaymentIdList>
+                            <arr:string />
+                        </acc1:WorkflowParentPaymentIdList>
+                    </acc1:ClsSubReceipt>
+                </wcf:GridData>
+                <wcf:GridDataWCF>
+					<wcf:UserDataSubReceipt />
+                </wcf:GridDataWCF>
+                <wcf:GuidWorkFlow>0</wcf:GuidWorkFlow>
+                <wcf:IsCheckSubReceipt>false</wcf:IsCheckSubReceipt>
+                <wcf:LOB>{{lob_code}}</wcf:LOB>
+                <wcf:OfficeCd>{{office_code|slice(1,4)}}</wcf:OfficeCd>
+                <wcf:PageName />
+                  
+                  
+                       
+                         <wcf:ParentPaymentID>{{receiptNo}}</wcf:ParentPaymentID>
+                       
+                  
+
+                <wcf:PartnerEmployeeCode />
+                <wcf:PayerID />
+                <wcf:PayerType />
+                <wcf:PaymentID />
+                <wcf:PaymentStatus />
+                <wcf:PolicyNo />
+								
+					<wcf:ProductCd>{{product_code}}</wcf:ProductCd>
+				
+                <wcf:SlNo>0</wcf:SlNo>
+                <wcf:Status>0</wcf:Status>
+                <wcf:StatusValueLst>
+                    <arr:string>NEW</arr:string>
+                    <arr:string>ENDORSEMENT</arr:string>
+                    <arr:string>RENEWAL</arr:string>
+                </wcf:StatusValueLst>
+                <wcf:SubProducerCode />
+                <wcf:Tagg_Untagg_Payment_Id />
+                <wcf:TransactionDate />
+
+                  
+                       
+                          <wcf:TransactionID>{{receiptNo}}</wcf:TransactionID>
+                       
+                  
+
+                <wcf:UnMaskedOfficeCd>{{office_code}}</wcf:UnMaskedOfficeCd>
+
+				
+					<wcf:TransactionType>NEWPOLICY</wcf:TransactionType> 
+				
+				<wcf:UserID>TASKUSER</wcf:UserID>
+                <wcf:WorkflowGUID>{{workflowId}} </wcf:WorkflowGUID>
+            </acc:objUserDataSubReceipt>
+            <acc:dicLVWFParams />
+        </acc:saveReceiptData>
+    </soapenv:Body>
+</soapenv:Envelope>
