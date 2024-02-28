@@ -8,23 +8,23 @@
 			"clientType": "Organization",
 			"salutation": "Mr",
 			"custId": "1000909610",
-			"custName": "{{proposal.data.client_fullname|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"custName": "",
 			"dateOfBirth": "",
 			"maritalStatus": "",
 			"gender": "",
 			"sourceOfFunds": "",
 			"uid": "",
 			"occupation": "other",
-			"address1": "{{proposal.data.proposer_address_line1|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
-			"address2": "{{proposal.data.proposer_address_line2|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
-			"address3": "{{proposal.data.proposer_address_line3|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
-			"pincode": "{{proposal.data.proposer_pincode}}",
-			"city": "{{proposal.data.proposer_city}}",
-			"state": "{{proposal.data.proposer_state}}",
-			"emailId": "{{proposal.data.client_email_id}}",
-			"pan": "{{proposal.data.pan_number}}",
-			"mobileNo": "{{policy.data.search.customer_mobileno}}",
-			"gstin": "{{proposal.data.gstin_no}}",
+			"address1": "Mauli pride ambewadi kurar village",
+			"address2": "ambewadi malad east",
+			"address3": "near jam jam backery",
+			"pincode": "400097",
+			"city": "Mumbai",
+			"state": "Maharashtra",
+			"emailId": "nitish.qualitykiosk@tataaig.com",
+			"pan": "KHZPS6377E",
+			"mobileNo": " ",
+			"gstin": "27KHZPS6377E1ZM",
 			"hypothecation": "",
 			{% set currentYear  ="now"|date("yyyy") %}
 			{% set currentMonth  ="now"|date("MM") %}
@@ -43,24 +43,24 @@
 			{% endif %}
 			"policyStartDt": "{{proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
 			"policyEndDt": "{{proposal.data.pro_policy_end_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
-			"applicationNo": "{{proposal.data.gc_product_code}}{{"now"|date("Y")|slice(2,3)}}{{proposal.proposal_no|slice(8,15)}}",
+			"applicationNo": "",
 			"applicationDt": "{{proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
 			"partnerAppNo": "{{proposal.quote_id}}",
 			"partnerAppDt": "{{proposal.data.quote_date|gc_date_convert('yyyy-mm-dd', 'dd/mm/yyyy')}}",
 			{% if data.policy_doc_not_applicable == 'Y' %}
             	"policyNo": "",
             {% else %}	
-	            "policyNo": "{{policy.policy_no}}",
+	            "policyNo": "",
             {% endif %}
 			"producerCode": "{{policy.broker_code}}",
-			"officeBranchLocCode": "{{proposal.data.location_code|slice(1,4)}}",
+			"officeBranchLocCode": "0200",
 			"officeBranchLocName": "",
 			"serviceTaxExempt": "No Exemption",
 			"pupApprovalInPlace": "PUP",
-			"particularsOfWork": "{{proposal.data.work_nature|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
-			"riskAddress1": "{{proposal.data.loc_1_address_line1|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
-			"riskAddress2": "{{proposal.data.loc_1_address_line2|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
-			"riskAddress3": "{{proposal.data.loc_1_address_line3|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"particularsOfWork": "ELECTRCIAN",
+			"riskAddress1": "Mauli pride ambewadi kurar village",
+			"riskAddress2": "ambewadi malad east",
+			"riskAddress3": "near JAM JAM backery",
 			"riskLandmark": "",
 			"riskPincode": "{{proposal.data.loc_1_pincode}}",
 			"riskCity": "{{proposal.data.loc_1_city}}",
@@ -72,33 +72,33 @@
 			"modeofEntry": "Direct",
 			"cdacNumber": "",
 			"intermediaryCode": "{{policy.broker_code}}",
-			"dealerCode": "{{proposal.data.sol_id}}",
-			"payertype": "{{payment.details[0].data.payer_type}}",
-			"officeLocation": "{{proposal.data.location_code|slice(1,4)}}",
-			"custNamePayerName": "{{proposal.data.customer_name}}",
+			"dealerCode": "",
+			"payertype": "",
+			"officeLocation": "0200",
+			"custNamePayerName": "",
 			"instrumentRcvdDate": "09/11/2022",
 			"applicationNumberPolicyno": "",
-			"receiptMode": "{{payment.details[0].data.payment_mode}}",
-            "chequeDDTransactionID": "{{payment.details[0].data.short_cheque_no}}",
-			"bankName": "{{payment.details[0].bank_name}}",
-			"chequeDDTransactionDate": "{{payment.details[0].cheque_date}}",
+			"receiptMode": "",
+            "chequeDDTransactionID": "",
+			"bankName": "",
+			"chequeDDTransactionDate": "",
 			"receiptAmount": "{{proposal.data.net_premium}}",
-			"authCode": "{{payment.details[0].data.producer_code}}",
+			"authCode": "",
             {% if proposal.data.business_type %}
 				"businessType": "01",
 			{% else %}
 				"businessType": "01",
 			{% endif%}		
-        	"relationship": "{{payment.details[0].data.payer_relation}}",
-			"customerFinancierDealerID": "{{policy.customer_id}}",
+        	"relationship": "",
+			"customerFinancierDealerID": "",
 			"transactionType": "04",
-			"mid": 17092036,
-			"tid": 17092036,
-			"houseBankACNo": "{{payment.details[0].data.account_number}}",
+			"mid": "",
+			"tid": "",
+			"houseBankACNo": "",
 			"depositSlipNo": 17122039,
-			"houseBank":"{{payment.details[0].data.house_bank}}",
-			"ifsccode": "{{payment.details[0].data.ifsc_code}}",
-			"clmLoadingDis": "{{proposal.data.calim_loading_uw}}",
+			"houseBank":"",
+			"ifsccode": "",
+			"clmLoadingDis": "",
 			"isUwCompleted": "Yes",
 			{% if proposal.data.location_type =='All over India' %}
 				"singleLocation": "No",
@@ -127,7 +127,7 @@
 				"nameofunderwriter": "Amit Patel",
 			{% endif%}
 			"policyLevelRemarks": "{{proposal.data.final_load_disc_per}}{{proposal.data.uw_remarks}}",
-			"paceId": "{{pace_payment_id}}" 
+			"paceId": "NB0001" 
 			}]
 	},
 
@@ -163,19 +163,10 @@
 			"ecRate": "{{proposal.data.employeeDetails[n].ecRate}}",
 			"nameOfEmpWorkman": "",
 			"numOfWorkers": "{{proposal.data.employeeDetails[n].numOfWorkers|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
-			"typeOfWorkers": "{{proposal.data.employeeDetails[n].typeOfWorkers|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
-			{% set placesOfEmployment= proposal.data.loc_1_address_line1~" "~proposal.data.loc_1_address_line2~""~proposal.data.loc_1_address_line3~""
-             ~proposal.data.loc_1_pincode~""~proposal.data.loc_1_state~""~proposal.data.loc_1_city~""~proposal.data.loc_1_city_state
-			 ~" \ "~proposal.data.loc_2_address_line1~" "~proposal.data.loc_2_address_line2~""~proposal.data.loc_2_address_line3~""
-             ~proposal.data.loc_2_pincode~""~proposal.data.loc_2_state~""~proposal.data.loc_2_city~""~proposal.data.loc_2_city_state
-             ~" \ "~proposal.data.loc_3_address_line1~" "~proposal.data.loc_3_address_line2~""~proposal.data.loc_3_address_line3~""
-             ~proposal.data.loc_3_pincode~""~proposal.data.loc_3_state~""~proposal.data.loc_3_city~""~proposal.data.loc_3_city_state
-             ~" \ "~proposal.data.loc_4_address_line1~" "~proposal.data.loc_4_address_line2~""~proposal.data.loc_4_address_line3~""
-             ~proposal.data.loc_4_pincode~""~proposal.data.loc_4_state~""~proposal.data.loc_4_city~""~proposal.data.loc_4_city_state
-             ~" \ "~proposal.data.loc_5_address_line1~" "~proposal.data.loc_5_address_line2~""~proposal.data.loc_5_address_line3~""
-             ~proposal.data.loc_5_pincode~""~proposal.data.loc_5_state~""~proposal.data.loc_5_city~""~proposal.data.loc_5_city_state%} 
+			"typeOfWorkers": "skilled",
+
 	
-			"placesOfEmployment": "{{placesOfEmployment|replace({"\n": "", "\r": "", "\t": "",'"':''})}}",
+			"placesOfEmployment": "Ambewadi kuara village malad East",
 			"monthlyWages": "{{proposal.data.employeeDetails[n].monthlyWages}}",
 			"totalWages": "{{proposal.data.employeeDetails[n].totalWages}}",
 			"categoryId": "{{proposal.data.employeeDetails[n].tradeCategory|slice(0,4)}}"

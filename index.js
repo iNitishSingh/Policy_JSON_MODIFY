@@ -26,7 +26,6 @@ import Twig from 'twig';
 }
 
  let token = await tokenGeneration();
-
 //Reading clause master of EC
 let workbook=xlsx.readFile("./EC_CLAUSE_MASTER.xlsx");
 let worksheet=workbook.Sheets[workbook.SheetNames[0]]
@@ -145,6 +144,8 @@ async function Ec_proposalGeneration(policy_json,token,range){
         'Content-Type': 'application/json'
     });
 
+    
+    
     header.append("Authorization",`Bearer ${token}`);
     
     const ec_request=await node_fetch('https://uatis2.cloware.in/api/v1/twigtest',{
