@@ -7,6 +7,7 @@ import Twig from 'twig';
 import tokenGeneration from './insyncToken.js'
 import insllionToken from './InsiilionToken.js'
 import Policydata from './PolicyJsoncall.js';
+import getpolicyNo from './Array.js'
 
 //Generating Token using tokengeneration function
  let token = await tokenGeneration();
@@ -17,62 +18,7 @@ let workbook=xlsx.readFile("./EC_CLAUSE_MASTER.xlsx");
 let worksheet=workbook.Sheets[workbook.SheetNames[0]]
 let range=xlsx.utils.sheet_to_json(worksheet);
 
-let pending_sync=[
-5190001160,
-5190001082,
-5190001080,
-5190001076,
-5190001031,
-5190001025,
-5190001022,
-5190001021,
-5190001020,
-5190001016,
-5190001015,
-5190001014,
-5190001002,
-5190000957,
-5190000947,
-5190000907,
-5190000903,
-5190000901,
-5190001189,
-5190001188,
-5190001184,
-5190001177,
-5190001174,
-5190001172,
-5190001170,
-5190001164,
-5190001151,
-5190001149,
-5190001148,
-5190001147,
-5190001146,
-5190001145,
-5190001144,
-5190001143,
-5190001142,
-5190001102,
-5190001072,
-5190001069,
-5190001051,
-5190001000,
-5190000937,
-5190000928,
-5190000927,
-5190000926,
-5190000925,
-5190000921,
-5190000920,
-5190000913,
-5190000909,
-5190000895,
-5190001216,
-5190001215,
-5190001214,
-
-]
+let pending_sync= getpolicyNo();
 
 for(let i=0;i<pending_sync.length;i++){
     const policy_json=await Policydata(uat2Token,pending_sync[i]);
