@@ -23,35 +23,17 @@
 			"state": "Maharashtra",
 			"emailId": "nitish.qualitykiosk@tataaig.com",
 			"pan": "KHZPS6377E",
-			"mobileNo": " ",
+			"mobileNo": "8097403991",
 			"gstin": "27KHZPS6377E1ZM",
 			"hypothecation": "",
-			{% set currentYear  ="now"|date("yyyy") %}
-			{% set currentMonth  ="now"|date("MM") %}
-			{% set currentDate  ="now"|date("dd") %}
-			{% set gc_date_yyy= proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'yyyy') %}
-			{% set gc_date_mm= proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'mm') %}
-			{% set gc_date_dd= proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'dd') %}
-			{% if gc_date_yyy>currentYear %}
-				"proposalDt": "{{currentDate}}/{{currentMonth}}/{{currentYear}}",
-			{% elseif (gc_date_yyy>=currentYear) and (gc_date_mm>currentMonth) %}
-				"proposalDt": "{{currentDate}}/{{currentMonth}}/{{currentYear}}",
-			{% elseif (gc_date_yyy==currentYear) and (gc_date_mm==currentMonth) and (gc_date_dd > currentDate) %}
-				"proposalDt": "{{currentDate}}/{{currentMonth}}/{{currentYear}}",
-			{% else %}
-				"proposalDt": "{{proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
-			{% endif %}
-			"policyStartDt": "{{proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
-			"policyEndDt": "{{proposal.data.pro_policy_end_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
+			"proposalDt": "04/12/2023",
+			"policyStartDt": "04/12/2023",
+			"policyEndDt": "03/12/2024",
 			"applicationNo": "",
-			"applicationDt": "{{proposal.data.pro_policy_start_dt|gc_date_convert('mm/dd/yyyy', 'dd/mm/yyyy')}}",
+			"applicationDt": "04/12/2023",
 			"partnerAppNo": "{{proposal.quote_id}}",
-			"partnerAppDt": "{{proposal.data.quote_date|gc_date_convert('yyyy-mm-dd', 'dd/mm/yyyy')}}",
-			{% if data.policy_doc_not_applicable == 'Y' %}
-            	"policyNo": "",
-            {% else %}	
-	            "policyNo": "",
-            {% endif %}
+			"partnerAppDt": "04/12/2023",
+            "policyNo": "",
 			"producerCode": "{{policy.broker_code}}",
 			"officeBranchLocCode": "0200",
 			"officeBranchLocName": "",
@@ -186,31 +168,31 @@
 		"extensionsFactors": [{
 	  "partnerAppNo": "{{proposal.quote_id}}",
 		{% if proposal.data.option_1 =='Trained' %}			
-			"workForce": "Yes",
+			"workForce": "No",
 		{% else %}
 			"workForce": "No",
 		{% endif%}
 		"workForceDis": "{{proposal.data.option_per_1}}",
 		{% if proposal.data.option_2 =='yes' %}		
-		"safetyGears": "Yes",
+		"safetyGears": "No",
 		{% else %}
 		"safetyGears": "No",
 		{% endif%}
 		"safetyGearsDisc": "{{proposal.data.option_per_2}}",
       {% if proposal.data.option_3 =='yes' %}		
-		"fireProtectEquip": "Yes",
+		"fireProtectEquip": "No",
 	{% else %}
 		"fireProtectEquip": "No",
 	{% endif%}
       "fireProtectEquipDisc": "{{proposal.data.option_per_3}}",
       {% if proposal.data.option_4 =='More than 3 years' %}		
-		"expOfContracter": "Yes",
+		"expOfContracter": "No",
 	{% else %}
 		"expOfContracter": "No",
 	{% endif%}
       "expOfContracterDisc": "{{proposal.data.option_per_4}}",
 	{% if proposal.data.option_5 =='yes' %}		
-	"security": "Yes",
+	"security": "No",
 		{% else %}
 	"security": "No",
 	{% endif%}
@@ -218,35 +200,35 @@
       {% if proposal.data.option_6 =='0-100' %}		
 	"groupSize": "No",
 	{% else %}
-	"groupSize": "Yes",
+	"groupSize": "No",
 	{% endif%}
       "groupSizeDisc": "{{proposal.data.option_per_6}}",
       {% if proposal.data.lp_option_option_1 =='yes' %}		
-	"wrkersWrkingAtHt": "Yes",
+	"wrkersWrkingAtHt": "No",
 {% else %}
 	"wrkersWrkingAtHt": "No",
 {% endif%}
       "wrkersWrkingAtHtDisc": "{{proposal.data.lp_option_per_1}}",
       {% if proposal.data.lp_option_option_2 =='yes' %}		
-	"offshoreRisk": "Yes",
+	"offshoreRisk": "No",
 {% else %}
 	"offshoreRisk": "No",
 {% endif%}
       "offshoreRiskDisc": "{{proposal.data.lp_option_per_2}}",
       {% if proposal.data.lp_option_option_3 =='yes' %}		
-	"staffInHazardActi": "Yes",
+	"staffInHazardActi": "No",
 {% else %}
 	"staffInHazardActi": "No",
 {% endif%}
       "staffInHazardActiDisc": "{{proposal.data.lp_option_per_3}}",
 	{% if proposal.data.lp_option_option_4 =='Hilly' %}		
-		"terrainOfSite": "Yes",
+		"terrainOfSite": "No",
 	{% else %}
 		"terrainOfSite": "No",
 	{% endif%}
       "terrainOfSiteDisc": "{{proposal.data.lp_option_per_4}}",
       {% if proposal.data.lp_option_option_5 =='Manual' %}		
-			"extentOfAuto": "Yes",
+			"extentOfAuto": "No",
 	 {% else %}
 			"extentOfAuto": "No",
 	{% endif%}

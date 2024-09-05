@@ -4,63 +4,90 @@ import  xlsx from "xlsx";
 import { json } from 'stream/consumers';
  import ExcelConverter from './excel.js'
 import Twig from 'twig';
+import tokenGeneration from './insyncToken.js'
+import insllionToken from './InsiilionToken.js'
+import Policydata from './PolicyJsoncall.js';
 
 //Generating Token using tokengeneration function
-  const tokenGeneration=async()=>{
-
-    const header = new Headers({
-        'Content-Type': 'application/json'
-    });
-
-    const response = await node_fetch('https://uatis2.cloware.in/api/v1/auth',{
-    method:"POST",
-    headers:header,
-    body:JSON.stringify({
-        email: "uw",
-        mpwd: "098f6bcd4621d373cade4e832627b4f6"
-        })
-    });
-    const resp = await response.json();
-    
-   return resp.data.token
-}
-
  let token = await tokenGeneration();
+ let uat2Token= await insllionToken();
+
 //Reading clause master of EC
 let workbook=xlsx.readFile("./EC_CLAUSE_MASTER.xlsx");
 let worksheet=workbook.Sheets[workbook.SheetNames[0]]
 let range=xlsx.utils.sheet_to_json(worksheet);
 
 let pending_sync=[
-    5190025255,
-    5190025995,
-    5190027836,
-    5190019055,
-    5190024294,
-    5190024288,
-    5190024281,
-    5190024285,
-    5190024771,
-    5190025460,
-    5190025471,
-    5190025486,
-    5190025525
+5190001160,
+5190001082,
+5190001080,
+5190001076,
+5190001031,
+5190001025,
+5190001022,
+5190001021,
+5190001020,
+5190001016,
+5190001015,
+5190001014,
+5190001002,
+5190000957,
+5190000947,
+5190000907,
+5190000903,
+5190000901,
+5190001189,
+5190001188,
+5190001184,
+5190001177,
+5190001174,
+5190001172,
+5190001170,
+5190001164,
+5190001151,
+5190001149,
+5190001148,
+5190001147,
+5190001146,
+5190001145,
+5190001144,
+5190001143,
+5190001142,
+5190001102,
+5190001072,
+5190001069,
+5190001051,
+5190001000,
+5190000937,
+5190000928,
+5190000927,
+5190000926,
+5190000925,
+5190000921,
+5190000920,
+5190000913,
+5190000909,
+5190000895,
+5190001216,
+5190001215,
+5190001214,
+
 ]
 
 for(let i=0;i<pending_sync.length;i++){
-    const policy_json=fs.readJSONSync(`./Policy JSON/${pending_sync[i]}.json`);
+    const policy_json=await Policydata(uat2Token,pending_sync[i]);
+   // console.log(policy_json)
     await Ec_proposalGeneration(policy_json,token,range)
 }
 
 
 async function Ec_proposalGeneration(policy_json,token,range){
-
-    let config
-    if(policy_json.data[0]==undefined){
-        config=policy_json;
+    let config;
+    if(policy_json==undefined){
+        config=policy_json[0];
     }
     else{
-        config = policy_json.data[0];
+        config = policy_json[0];
     }
 
     //Modifying UAT data 
@@ -79,7 +106,8 @@ async function Ec_proposalGeneration(policy_json,token,range){
     else{
         console.log(config.policy.broker_code+"-"+ config.proposal.data.broker_name+"Not present")
     }
-
+    
+    config.proposal.quote_id=`NKS${Math.floor(100000000 + Math.random() * 90000000)}`
     // adding arrays if not present in JSON
     if(config.proposal.data.employeeDetails == undefined ){
 
