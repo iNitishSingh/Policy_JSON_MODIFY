@@ -5,7 +5,7 @@ import fs from 'fs-extra'
     let  worksheet = XLSX.utils.json_to_sheet(a);
     let  workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'policy');
-    XLSX.writeFile(workbook, 'sample.xlsx');
+    XLSX.writeFile(workbook, './Response Logs/Response.xlsx');
     return true
 }
 

@@ -1,20 +1,22 @@
 import node_fetch from 'node-fetch'
 import fs from 'fs-extra';
 import  xlsx from "xlsx";
-import { json } from 'stream/consumers';
  import ExcelConverter from './excel.js'
-import Twig from 'twig';
-import tokenGeneration from './insyncToken.js'
-import insllionToken from './InsiilionToken.js'
-import Policydata from './PolicyJsoncall.js';
-import getpolicyNo from './Array.js'
+import tokenGeneration from './API/insyncToken.js'
+import insllionToken from './API/InsiilionToken.js'
+import Policydata from './API/PolicyJsoncall.js';
+import getpolicyNo from './policyNo/Array.js'
+import twigtest from './API/twigtest.js';
+import proposalGeneration from './API/proposal.js';
+
 
 //Generating Token using tokengeneration function
- let token = await tokenGeneration();
+ let Tokenresponse = await tokenGeneration();
+ let token = Tokenresponse.body.data.token;
  let uat2Token= await insllionToken();
 
 //Reading clause master of EC
-let workbook=xlsx.readFile("./EC_CLAUSE_MASTER.xlsx");
+let workbook=xlsx.readFile("./EC Master/EC_CLAUSE_MASTER.xlsx");
 let worksheet=workbook.Sheets[workbook.SheetNames[0]]
 let range=xlsx.utils.sheet_to_json(worksheet);
 
@@ -22,12 +24,13 @@ let pending_sync= getpolicyNo();
 
 for(let i=0;i<pending_sync.length;i++){
     const policy_json=await Policydata(uat2Token,pending_sync[i]);
+   
    // console.log(policy_json)
     await Ec_proposalGeneration(policy_json,token,range)
 }
 
-
 async function Ec_proposalGeneration(policy_json,token,range){
+   
     let config;
     if(policy_json==undefined){
         config=policy_json[0];
@@ -38,9 +41,8 @@ async function Ec_proposalGeneration(policy_json,token,range){
 
     //Modifying UAT data 
     config.proposal.data.location_code="90200";
+   
     if (config.proposal.data.channel_mapper_name ==  "Agency"){
-
-
         config.policy.broker_code="2123415667";
     }
     else if(config.proposal.data.channel_mapper_name ==  "Broker"){
@@ -59,7 +61,7 @@ async function Ec_proposalGeneration(policy_json,token,range){
 
         let  employeeDetails=[];
         let  clausesMaster=[];
-        let premiumDetails=[]
+        let premiumDetails=[];
 
         for(let i=1;i<=Number(config.quote.data.worker_detail_count);i++){
             employeeDetails.push({
@@ -105,72 +107,29 @@ async function Ec_proposalGeneration(policy_json,token,range){
         config.proposal.data['premiumDetails']=premiumDetails;
         config.proposal.data['clausesMaster']=clausesMaster
     }
-    else{
-        console.log("Not required")
-    }
 
 
-    let twig =fs.readFileSync('./Ecproposal.twig','utf8',function(error,data){
+    let twig =fs.readFileSync('./twig/Ecproposal.twig','utf8',function(error,data){
         console.log(error)
     })
-
-    const header = new Headers({
-        'Content-Type': 'application/json'
-    });
-
-    
-    
-    header.append("Authorization",`Bearer ${token}`);
-    
-    const ec_request=await node_fetch('https://uatis2.cloware.in/api/v1/twigtest',{
-        method:"POST",
-        headers:header,
-        body:JSON.stringify({
-            json:JSON.stringify(config),
-            twig:twig
-        })
-    })
-    let ec_re =await ec_request.json();
-
-    const Ecproposal=await node_fetch('https://connectbeta.tataaiginsurance.in/integration/PACERestService/webServiceEC',{
-        method:"POST",
-        headers:header,
-        body:ec_re.data.data
-    })
-    const Ecproposal_resp = await Ecproposal.json();
+    const ec_re=await twigtest(config,twig,token);
 
 
+    const Ecproposal_resp = await proposalGeneration(ec_re.body.data.data)
 
-    //fs.writeJsonSync('./policy_sub.json',Ecproposal_resp.errorLog.errorLog[0])
 
-
-    // const subrecipt_json={
-    //     source:"TATA-AIG",
-    //     medium:"IPDSV2_UAT",
-    //     campaign:"IPDSV2_UAT",
-    //     Amount:config.quote.data.total_premium,
-    //     Application_No:Ecproposal_resp.errorLog.errorLog[0].applicationNo,
-    //     receiptNo:Ecproposal_resp.errorLog.errorLog[0].receiptNo,
-    //     customerId:Ecproposal_resp.errorLog.errorLog[0].customerId,
-    //     workflowId:Ecproposal_resp.errorLog.errorLog[0].workflowId,
-    //     product_code:config.quote.data.gc_product_code,
-    //     lob_code:config.quote.data.gc_product_code.toString().slice(0,2),
-    //     proposal_no:Ecproposal_resp.errorLog.errorLog[0].proposalNo,
-    //     office_code:config.proposal.data.location_code
-    // }
-
-    if(fs.existsSync('./policy_response.json')){
-        let a = fs.readJSONSync('./policy_response.json');
+    if(fs.existsSync('./Response Logs/policy_response.json')){
+        let a = fs.readJSONSync('./Response Logs/policy_response.json');
         a.push(Ecproposal_resp.errorLog.errorLog[0])
-        fs.writeJsonSync('./policy_response.json',a)
-
-        console.log(ExcelConverter(a))
+        fs.writeJsonSync('./Response Logs/policy_response.json',a)
+        //console.log(ExcelConverter)
+        ExcelConverter(a)
     }
     else{
         let a =[]
         a.push(Ecproposal_resp.errorLog.errorLog[0])
-        fs.writeJsonSync('./policy_response.json',a)
-
+        fs.writeJsonSync('./Response Logs/policy_response.json',a)
+        ExcelConverter(a)
         //console.log(ExcelConverter)
     }
 }
